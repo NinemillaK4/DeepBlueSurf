@@ -133,19 +133,12 @@ background: linear-gradient(65deg, #3D9970, #FFDC00); /* Standard syntax */
 }
 
 .header_text { padding-top: 100px; min-width: 100%; }
+
 /*GOOGLE MAPS*/
 #map {
-	height: 400px;
-	width: 100%;
-	background-color: white;
-
-	border-top: 1px solid white;
-
-	/*REMOVE TO MAKE MAP GRAY
-	-webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    */
-       }
+            height: 500px;
+            width: 100%;
+        }
 /*MENU*/
 .menu_section {
 position: fixed;
@@ -354,89 +347,98 @@ z-index: 150;
   background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
 }
 
-/* Style the popup form content */
+/* Style for the popup background */
+.popup-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.8);
+   display: none; /* Hidden by default */
+   justify-content: center;
+   align-items: center;
+   z-index: 1000; /* Make sure it is on top of other content */
+}
+
+/* Style for the popup content */
 .popup-content {
-  background-color: white;
-  margin: 15% auto; /* Center the form */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 300px; /* Set a width for the form */
-  height: 400px; /* Set a width for the form */
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  border-radius: 10px;
-  text-align: left;
+   background-color: #fff;
+   padding: 40px;
+   border-radius: 10px;
+   max-width: 600px;
+   width: 100%;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Style the close button */
-.close-popup {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+.popup-content h2 {
+   margin-top: 0;
+   color: #333;
 }
 
-.close-popup:hover,
-.close-popup:focus {
-  color: black;
+.popup-content input[type="text"],
+.popup-content input[type="email"],
+.popup-content textarea {
+   width: 100%;
+   padding: 10px;
+   margin: 10px 0;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-sizing: border-box;
 }
 
-form {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-  margin: auto;
-  font-family: 'Arial', sans-serif;
+.popup-content input[type="submit"] {
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   cursor: pointer;
+   border-radius: 5px;
 }
 
-/* Styling for input fields */
-input[type="text"], input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+.popup-content input[type="submit"]:hover {
+   background-color: #45a049;
 }
 
-/* Submit button styling */
-input[type="submit"] {
-  width: 100%;
-  background-color: #007BFF;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.send-email-btn {
+background-color: #008CBA; /* Blue color */
+color: white;
+border: none;
+padding: 15px 25px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 5px;
+display: block;
+width: 100%;
+margin-top: 10px;
 }
 
-input[type="submit"]:hover {
-  background-color: #0056b3;
+/* Hover effect for the Send Email button */
+.send-email-btn:hover {
+background-color: #005f73; /* Darker blue on hover */
 }
 
-/* Label styling */
-label {
-  font-size: 14px;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
+.close-btn {
+   background-color: red;
+   color: white;
+   border: none;
+   padding: 10px;
+   border-radius: 5px;
+   cursor: pointer;
+   float: right;
 }
 
-/* Contact Us text style 
-h2 {
-  text-align: center;
-  font-family: 'Cursive', sans-serif;
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}*/
+.close-btn:hover {
+   background-color: darkred;
+}
 
-/* Responsive design for mobile */
-@media screen and (max-width: 800px) {
-  form {
-    width: 90%;
-  }
+/* To prevent clicking on background content when popup is active */
+body.popup-active {
+   overflow: hidden; /* Prevent scrolling */
+}
+
+/* Disable pointer events on the background when popup is open */
+.content-block {
+   pointer-events: none; /* Prevent clicks on other content */
+   opacity: 0.5; /* Optional: Dims the background content */
 }

@@ -50,251 +50,115 @@ $('a[href*="#"]')
 	});
 
 //GOOGLE MAPS
-        function initMap() {
-        var MargaretRiver = {lat: -33.9536, lng: 115.07391};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: MargaretRiver,
-          styles: [
-  {
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#ebe3cd"
-      }
-    ]
-  },
-  {
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#523735"
-      }
-    ]
-  },
-  {
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#f5f1e6"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#c9b2a6"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.land_parcel",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#dcd2be"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.land_parcel",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#ae9e90"
-      }
-    ]
-  },
-  {
-    "featureType": "landscape.natural",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#dfd2ae"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#dfd2ae"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#93817c"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.park",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#a5b076"
-      }
-    ]
-  },
-  {
-    "featureType": "poi.park",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#447530"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#f5f1e6"
-      }
-    ]
-  },
-  {
-    "featureType": "road.arterial",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#fdfcf8"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#f8c967"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#e9bc62"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway.controlled_access",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#e98d58"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway.controlled_access",
-    "elementType": "geometry.stroke",
-    "stylers": [
-      {
-        "color": "#db8555"
-      }
-    ]
-  },
-  {
-    "featureType": "road.local",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#806b63"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.line",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#dfd2ae"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.line",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#8f7d77"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.line",
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      {
-        "color": "#ebe3cd"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.station",
-    "elementType": "geometry",
-    "stylers": [
-      {
-        "color": "#dfd2ae"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#b9d3c2"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "labels.text.fill",
-    "stylers": [
-      {
-        "color": "#92998d"
-      }
-    ]
-  }
-]
-        });
-        var marker = new google.maps.Marker({
-          position: MargaretRiver,
-          map: map
-        });
-      }
+ function initMap() {
+            // Coordinates of Avore Beach, Portugal
+            var avoreBeach = { lat: 41.330245, lng: -8.737748 };  
 
-var popup = document.getElementById('popupForm');
-var openBtn = document.querySelector('.open-popup');
-var closeBtn = document.querySelector('.close-popup');
+            // Create a new map centered on Avore Beach
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,  // Zoom level
+                center: avoreBeach,  // Center map at Avore Beach
+            });
 
-// When the user clicks the button, open the popup
-openBtn.onclick = function(event) {
-  event.preventDefault(); // Prevent default link behavior
-  popup.style.display = 'block';
+            // Custom marker icon (you can replace this URL with your own icon)
+            var customIcon = {
+                url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',  // Custom icon URL
+                scaledSize: new google.maps.Size(50, 50),  // Scale the icon
+            };
+
+            // Add a marker with a custom icon at Avore Beach
+            var marker = new google.maps.Marker({
+                position: avoreBeach,
+                map: map,
+                title: 'DeepBlue, Portugal',
+                icon: customIcon,  // Set the custom icon
+            });
+        }
+
+var popup = document.getElementById("popup-form");
+var openPopupBtn = document.getElementById("open-popup");
+var closePopupBtn = document.getElementById("close-popup");
+var body = document.body;
+var backgroundContent = document.getElementById("background-content");
+
+// Open the popup when the button is clicked
+openPopupBtn.onclick = function() {
+    popup.style.display = "flex";
+    body.classList.add('popup-active');
+    backgroundContent.classList.add('content-block'); // Disable background content interactions
 }
 
-// When the user clicks on the close button, close the popup
-closeBtn.onclick = function() {
-  popup.style.display = 'none';
+// Close the popup when the close button is clicked
+closePopupBtn.onclick = function() {
+    popup.style.display = "none";
+    body.classList.remove('popup-active');
+    backgroundContent.classList.remove('content-block'); // Re-enable background content interactions
 }
 
-// When the user clicks outside the popup content, close it
+// Close the popup when the user clicks outside the form
 window.onclick = function(event) {
-  if (event.target == popup) {
-    popup.style.display = 'none';
+    if (event.target == popup) {
+        popup.style.display = "none";
+        body.classList.remove('popup-active');
+        backgroundContent.classList.remove('content-block'); // Re-enable background content interactions
+    }
+}
+
+
+function validateForm() {
+  // Get form values
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var message = document.getElementById("message").value.trim();
+
+  // Simple email validation regex
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Get error message elements
+  var nameError = document.getElementById("nameError");
+  var emailError = document.getElementById("emailError");
+  var messageError = document.getElementById("messageError");
+
+  // Validation flags
+  var isValid = true; // Assume form is valid
+
+  // Validate name
+  if (name === "") {
+      nameError.style.display = "block"; // Show error if name is empty
+      isValid = false; // Set valid flag to false
+  } else {
+      nameError.style.display = "none"; // Hide error if valid
   }
+
+  // Validate email
+  if (!emailPattern.test(email)) {
+      emailError.style.display = "block"; // Show error if email is invalid
+      isValid = false; // Set valid flag to false
+  } else {
+      emailError.style.display = "none"; // Hide error if valid
+  }
+
+  // Validate message
+  if (message === "") {
+      messageError.style.display = "block"; // Show error if message is empty
+      isValid = false; // Set valid flag to false
+  } else {
+      messageError.style.display = "none"; // Hide error if valid
+  }
+
+  // If all fields are valid, open email client
+  if (isValid) {
+      sendEmail(name, email, message); // Only call sendEmail() if form is valid
+  }
+}
+
+// Function to open email client with pre-filled form data
+function sendEmail(name, email, message) {
+  // Construct mailto link
+  var subject = encodeURIComponent("New Contact Us Message from " + name);
+  var body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
+  var mailtoLink = "mailto:xutabesa@zohomail.eu?subject=" + subject + "&body=" + body;
+
+  // Open the user's email client with pre-filled data
+  window.location.href = mailtoLink;
 }

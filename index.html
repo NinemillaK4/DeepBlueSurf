@@ -31,6 +31,7 @@
 	<div class="flex_item menu_item menu_item_outside"><a href="#top"><p>Home</p></a></div>
 	<div class="flex_item menu_item menu_item_outside"><a href="#team"><p>Quem Somos</p></a></div>
 	<div class="flex_item menu_item menu_item_outside"><a href="#contact"><p>Ofertas</p></a></div></a>
+	<div class="flex_item menu_item menu_item_outside"><a id="open-popup" ><p>Contactar-nos</p></a></div></a>
 </div>
 
 <div class="section page header_section">
@@ -78,42 +79,42 @@
 			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><br>
 			<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
 		</div></a>
-		<a href="#link7" class="open-popup"><div class="feature offer flex_feature_item offer2">
+		<a href="#link7" class=""><div class="feature offer flex_feature_item offer2">
 			<h2>Partys</h2>
 			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><br>
 			<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
 		</div></a>
-		<a href="#link8" ><div class="feature offer flex_feature_item offer3">
+		<a href="#link8" class=""> <div class="feature offer flex_feature_item offer3">
 			<h2>Good Food</h2>
 			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><br>
 			<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
 		</div></a>
+	</div> 
+	    <div class="popup-overlay" id="popup-form">
+        <div class="popup-content">
+            <button class="close-btn" id="close-popup">X</button>
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <i><div style="color: red;" class="error-message" id="nameError">Please enter your name.</div></i>
 
-		<!-- The Popup Form -->
-		<div id="popupForm" class="popup">
-		  <div class="popup-content">
-		    <span class="close-popup">&times;</span> <!-- Close button -->
-		    <h2>Contact Us</h2>
-		    <form action="#">
-		      <label for="name">Name:</label>
-		      <input type="text" id="name" name="name" placeholder="Your name" required><br>
-		      <label for="email">Email:</label>
-		      <input type="email" id="email" name="email" placeholder="Your email" required>
-		      <input type="submit" value="Submit">
-		    </form>
-		  </div>
-		</div>
-	</div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <i><div style="color: red;" class="error-message" id="emailError">Please enter a valid email address.</div></i>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                <i><div style="color: red;" class="error-message" id="messageError">Please enter your message.</div></i>
+
+                <!-- Styled Send Email button -->
+                <input type="button" value="Send via Email App" class="send-email-btn" onclick="validateForm()">
+            </form>
+        </div>
+    </div>
 </div>
-
 <div id="map"></div>
-
-<div class="section footer_section">
-	<a href="https://www.calmarsolutions.ch"><p class="footer_text">Margs Surf Camp - Wallcliffe Rd. 1050, Margaret River WA - WebDevelopment: Calmar Solutions</p></a>
-</div>
-
-<!--SCRIPT SECTION-->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE-AatCnNmEzkMZL2Rmqu87zjmDqpU3vA&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGyzGZY5UKVMPmRp2xVNKJ8XYKCFU9bbE&callback=initMap"></script>
 
 <script src="./script.js"></script>
 
