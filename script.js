@@ -39,15 +39,15 @@ $('a[href*="#"]')
   });
 
 //CHANGE CSS CLASS IN HTML
-	$(document).scroll(function() {
-	var swap_class = document.getElementById("change_class");
+  $(document).scroll(function() {
+  var swap_class = document.getElementById("change_class");
 
-	   if($(window).scrollTop() === 0) {
-	     swap_class.classList.remove("menu_color_change");
-	   } else {
-	   		swap_class.classList.add("menu_color_change");
-	   	}
-	});
+     if($(window).scrollTop() === 0) {
+       swap_class.classList.remove("menu_color_change");
+     } else {
+        swap_class.classList.add("menu_color_change");
+      }
+  });
 
 //GOOGLE MAPS
  function initMap() {
