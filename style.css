@@ -217,9 +217,9 @@ z-index: 150;
 		    z-index: 1;
 		    left: 0;
 		}
-			.dropdown:hover .dropdown-content {
-			    display: block;
-			}
+		.dropdown:hover .dropdown-content {
+		    display: block;
+		}
 		.menu_item_inside {
 			-webkit-box-shadow: none;
 			-moz-box-shadow: none;
