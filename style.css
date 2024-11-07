@@ -207,8 +207,8 @@ z-index: 150;
 .section_container {margin-right: auto; margin-left: auto;}
 .menu_color_change {background-color: rgba(255,255,255,.5);}
 	/*MENU DROPDOWN*/
-	@media screen and (min-width: 720px) {.dropdown-content{display: none;} .dropdown {display: none;}}
-	@media screen and (max-width: 719px) {
+	@media screen and (min-width: 920px) {.dropdown-content{display: none;} .dropdown {display: none;}}
+	@media screen and (max-width: 919px) {
 		.dropdown-content {
 		    display: none;
 		    position: absolute;
